@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-mode">
+    <header class="banner">
+        <button id="menu-toggle" class="hamburger-button">&#9776;</button>
+        <img src="pokedex-title.png" alt="Pokédex Search" class="banner-title">
+        <button id="surprise-me-button">Surprise Me!</button>
+    </header>
+
+    <nav id="side-menu" class="side-menu">
+        <button id="close-menu-button" class="close-menu-button">&times;</button>
+        <h2>Menu</h2>
+        <button class="menu-button" data-view="pokedex">Pokédex</button>
+        <button class="menu-button" data-view="wtp-game">Who's That Pokémon?</button>
+        <button class="menu-button" data-view="matching-game">Matching Game</button>
+    </nav>
+
+    <main id="main-content" class="main-content">
+        <!-- Pokédex View -->
+        <div id="pokedex-view" class="view-container active-view">
+            <div class="pokedex">
+                <!-- Left Panel -->
+                <div class="panel left-panel">
+                    <div class="panel-header">
+                        <div class="lights">
+                            <div class="light blue"></div>
+                            <div class="light red"></div>
+                            <div class="light yellow"></div>
+                            <div class="light green"></div>
+                        </div>
+                    </div>
+                    <div class="screen-container">
+                        <div id="pokedex-screen">
+                            <div id="pokemon-info"></div>
+                            <div id="loading" class="hidden"><div class="pokeball"></div></div>
+                        </div>
+                    </div>
+                    <div class="controls">
+                        <div class="d-pad">
+                            <div class="d-pad-up"></div><div class="d-pad-left"></div>
+                            <div class="d-pad-right"></div><div class="d-pad-down"></div>
+                            <div class="d-pad-center"></div>
+                        </div>
+                        <div class="search-container">
+                            <input type="text" id="search-input" placeholder="Search Pokémon..." autocomplete="off">
+                            <div id="suggestions-container"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Hinge -->
+                <div class="hinge"></div>
+                <!-- Right Panel -->
+                <div class="panel right-panel">
+                    <div id="evolution-chain" class="info-screen">
+                        <h3>Evolution Chain</h3>
+                        <div class="evolution-display"></div>
+                    </div>
+                    <div class="blue-buttons">
+                        <div class="blue-button"></div><div class="blue-button"></div>
+                        <div class="blue-button"></div><div class="blue-button"></div>
+                        <div class="blue-button"></div><div class="blue-button"></div>
+                        <div class="blue-button"></div><div class="blue-button"></div>
+                        <div class="blue-button"></div><div class="blue-button"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Who's That Pokémon? Game View -->
+        <div id="wtp-game-view" class="view-container">
+            <div id="whos-that-pokemon-game" class="game-card">
+                <h3>Who's That Pokémon?</h3>
+                <div class="wtp-display">
+                    <img id="wtp-sprite" class="silhouette" src="" alt="Who's That Pokémon?">
+                </div>
+                <input type="text" id="wtp-guess" placeholder="Enter your guess...">
+                <button id="wtp-submit">Guess</button>
+                <p id="wtp-feedback"></p>
+            </div>
+        </div>
+
+        <!-- Matching Game View -->
+        <div id="matching-game-view" class="view-container">
+            <div id="matching-game" class="game-card">
+                <h3>Matching Game</h3>
+                <div id="matching-board"></div>
+                <button id="matching-reset">Reset Game</button>
+            </div>
+        </div>
+    </main>
+
+    <aside class="sidebar" id="pokemon-of-the-day">
+        <h2>Pokémon of the Day</h2>
+        <div class="potd-content"></div>
+    </aside>
+
+    <button id="theme-toggle" class="pokeball-button">
+        <div class="pokeball-center-button"></div>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
